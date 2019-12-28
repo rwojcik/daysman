@@ -1,7 +1,7 @@
-import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/core/styles";
-import { theme } from "../src/theme";
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheets } from '@material-ui/core/styles';
+import { theme } from '../theme';
 
 export default class MyDocument extends Document {
   render() {
@@ -9,37 +9,30 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-          />
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
 
-        <style jsx>{`
+        {/* <style jsx>{`
           :global(body) {
-            min-height: 100vh;
+            min-height: calc(var(--vh, 1vh) * 100);
           }
 
           :global(code) {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-              monospace;
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
           }
 
           :global(a) {
             text-decoration: none;
             color: inherit;
           }
-        `}</style>
+        `}</style> */}
       </html>
     );
   }
@@ -74,7 +67,7 @@ MyDocument.getInitialProps = async ctx => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />)
+      enhanceApp: App => props => sheets.collect(<App {...props} />),
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -82,9 +75,6 @@ MyDocument.getInitialProps = async ctx => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement()
-    ]
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import { Nav } from "./nav";
+import React from 'react';
+import { Nav } from './Nav';
 
 export const Error = () => (
   <div>
@@ -9,7 +9,7 @@ export const Error = () => (
       <h1 className="title">Error!</h1>
     </div>
 
-    <style jsx>{`
+    {/* <style jsx>{`
       .hero {
         width: 100%;
         color: #333;
@@ -22,6 +22,6 @@ export const Error = () => (
         text-align: center;
         font-size: 48px;
       }
-    `}</style>
+    `}</style> */}
   </div>
 );

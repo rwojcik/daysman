@@ -1,24 +1,25 @@
-import React from "react";
-import Head from "next/head";
-import { Nav } from "./nav";
+import React from 'react';
+import Head from 'next/head';
+import { Nav } from './Nav';
+import { Timer } from './Timer';
+import { Typography } from '@material-ui/core';
 
-export const Home = () => (
-  <div>
-    <Head>
-      <title>daysman</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+export const Home = () => {
+  return (
+    <div>
+      <Head>
+        <title>daysman</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    <Nav />
+      <Nav />
 
-    <div className="hero">
-      <h1 className="title">Welcome to daysman!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-    </div>
+      <div>
+        <Typography variant="h1">Welcome to daysman!</Typography>
+        <Timer />
+      </div>
 
-    <style jsx>{`
+      {/* <style jsx>{`
       .hero {
         width: 100%;
         color: #333;
@@ -34,6 +35,7 @@ export const Home = () => (
       .description {
         text-align: center;
       }
-    `}</style>
-  </div>
-);
+    `}</style> */}
+    </div>
+  );
+};

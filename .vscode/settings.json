@@ -1,5 +1,11 @@
 {
   "cSpell.words": [
-    "daysman"
-  ]
+    "Interop",
+    "clsx",
+    "daysman",
+    "esnext",
+    "flowtype",
+    "prefetch"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
