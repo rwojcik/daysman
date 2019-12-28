@@ -12,6 +12,7 @@ export const theme = createMuiTheme({
       '-apple-system',
       'BlinkMacSystemFont',
       'Poppins',
+      'Roboto',
       '"Helvetica Neue"',
       'Arial',
       'sans-serif',
