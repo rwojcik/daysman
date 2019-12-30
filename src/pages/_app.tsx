@@ -4,6 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import '../fonts/fonts.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { theme } from '../theme';
+import Head from 'next/head';
 
 export default class MyApp extends App {
   removeSsCss = () => {
@@ -41,11 +42,15 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <>
+        <Head>
+          <title>daysman</title>
+        </Head>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </>
     );
   }
 }

@@ -36,6 +36,9 @@ const useStyles = makeStyles(
         fill: 'currentColor',
       },
     },
+    navButton: {
+      textTransform: 'lowercase',
+    },
   }),
   { name: 'Nav' }
 );
@@ -56,7 +59,12 @@ export const Nav = () => {
         <ul className={classes.ul}>
           {links.map(l => (
             <li className={classes.li} key={l.name}>
-              <DmButtonLink color="inherit" href={l.href} activeClassName={classes.activeLink}>
+              <DmButtonLink
+                color="inherit"
+                href={l.href}
+                activeClassName={classes.activeLink}
+                className={classes.navButton}
+              >
                 {l.name}
               </DmButtonLink>
             </li>

@@ -10,28 +10,13 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-          {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-
-        {/* <style jsx>{`
-          :global(body) {
-            min-height: calc(var(--vh, 1vh) * 100);
-          }
-
-          :global(code) {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-          }
-
-          :global(a) {
-            text-decoration: none;
-            color: inherit;
-          }
-        `}</style> */}
       </html>
     );
   }

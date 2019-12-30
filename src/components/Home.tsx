@@ -9,7 +9,6 @@ export const Home = () => {
     <div>
       <Head>
         <title>daysman</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Nav />
