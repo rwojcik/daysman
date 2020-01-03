@@ -6,15 +6,19 @@ import { FlexSpacer } from './common/FlexSpacer';
 import Mustache from '../assets/mustache-vector.svg';
 
 const links = [
-  { name: 'Timer', href: '/' },
+  { name: 'Home', href: '/' },
+  { name: 'Timer', href: '/timer' },
   { name: 'Projects', href: '/projects' },
   { name: 'Companies', href: '/companies' },
-  { name: 'User', href: '/user' },
   { name: 'Reports', href: '/reports' },
+  { name: 'User', href: '/user' },
 ];
 
 const useStyles = makeStyles(
   ({ palette }: Theme) => ({
+    title: {
+      whiteSpace: 'nowrap',
+    },
     nav: {
       textAlign: 'center',
     },
@@ -43,12 +47,12 @@ const useStyles = makeStyles(
   { name: 'Nav' }
 );
 
-export const Nav = () => {
+export const Nav = React.memo(function Nav() {
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar elevation={0} position="static">
       <Toolbar>
-        <Typography variant="h4">
+        <Typography variant="h4" className={classes.title}>
           <strong>day</strong>
           <span className={classes.mustache}>
             <Mustache />
@@ -73,4 +77,4 @@ export const Nav = () => {
       </Toolbar>
     </AppBar>
   );
-};
+});
