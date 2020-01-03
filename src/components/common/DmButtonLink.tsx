@@ -30,3 +30,5 @@ const ButtonLink: React.FC<ButtonLinkProps> = props => {
 export const DmButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>((props, ref) => (
   <ButtonLink {...props} innerRef={ref} />
 ));
+
+DmButtonLink.displayName = 'DmButtonLink';

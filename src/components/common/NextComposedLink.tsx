@@ -22,3 +22,5 @@ export const NextComposedLink = React.forwardRef<HTMLAnchorElement, NextComposed
     </NextLink>
   );
 });
+
+NextComposedLink.displayName = 'NextComposedLink';
