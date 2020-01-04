@@ -1,8 +1,8 @@
 import React from 'react';
-import { HomeTimer } from './HomeTimer';
+import { Timer } from './timer/Timer';
 import { Grid, useTheme, useMediaQuery } from '@material-ui/core';
 import { HomeLinkList } from './HomeLinkList';
-import { DmDivider } from './common/DmDivider';
+import { DmDivider } from '../common/DmDivider';
 
 export const HomeLayout = () => {
   const theme = useTheme();
@@ -11,7 +11,7 @@ export const HomeLayout = () => {
   return (
     <Grid container>
       <Grid item lg xs={12}>
-        <HomeTimer />
+        <Timer />
       </Grid>
       <Grid item lg={1} xs={12}>
         <DmDivider vertical={lgUp} />
