@@ -2,11 +2,14 @@
   "cSpell.words": [
     "Dexie",
     "Interop",
+    "Parens",
     "Svgr",
+    "camelcase",
     "clsx",
     "daysman",
     "esnext",
     "flowtype",
+    "peasy",
     "prefetch"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
