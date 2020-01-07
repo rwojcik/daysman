@@ -4,7 +4,7 @@ const withFonts = require('next-fonts');
 const withCSS = require('@zeit/next-css');
 
 const nextConfig = {
-  distDir: 'build',
+  // distDir: 'build',
   webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,
