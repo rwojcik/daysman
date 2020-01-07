@@ -1,8 +1,9 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import { Toolbar, Typography, makeStyles } from '@material-ui/core';
+import { Toolbar, Typography, makeStyles, Theme } from '@material-ui/core';
 import { DmButtonLink } from './common/DmButtonLink';
 import { FlexSpacer } from './common/FlexSpacer';
+import Mustache from '../assets/mustache-vector.svg';
 
 const links = [
   { name: 'Timer', href: '/' },
@@ -13,7 +14,7 @@ const links = [
 ];
 
 const useStyles = makeStyles(
-  {
+  ({ palette }: Theme) => ({
     nav: {
       textAlign: 'center',
     },
@@ -27,7 +28,15 @@ const useStyles = makeStyles(
       display: 'flex',
       padding: '6px 8px',
     },
-  },
+    activeLink: {
+      color: palette.primary.light,
+    },
+    mustache: {
+      '& path': {
+        fill: 'currentColor',
+      },
+    },
+  }),
   { name: 'Nav' }
 );
 
@@ -37,13 +46,17 @@ export const Nav = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h4">
-          <strong>daysman</strong>
+          <strong>day</strong>
+          <span className={classes.mustache}>
+            <Mustache />
+          </span>
+          <strong>man</strong>
         </Typography>
         <FlexSpacer />
         <ul className={classes.ul}>
           {links.map(l => (
             <li className={classes.li} key={l.name}>
-              <DmButtonLink color="inherit" href={l.href}>
+              <DmButtonLink color="inherit" href={l.href} activeClassName={classes.activeLink}>
                 {l.name}
               </DmButtonLink>
             </li>
